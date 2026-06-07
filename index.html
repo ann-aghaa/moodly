@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoodMap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Daily mood tracker</p>
+        <h1>MoodMap</h1>
+        <p class="subtitle">Mark how your day felt, then watch your patterns build over time.</p>
+      </div>
+      <div class="today-card">
+        <span>Today</span>
+        <strong id="todayLabel">--</strong>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="panel mood-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">End of day check-in</p>
+            <h2>How was your mood?</h2>
+          </div>
+          <input id="moodDate" type="date" aria-label="Mood date">
+        </div>
+
+        <div class="mood-options" id="moodOptions" aria-label="Mood choices">
+          <button type="button" class="mood-button" data-score="5" data-label="Great">Great</button>
+          <button type="button" class="mood-button" data-score="4" data-label="Good">Good</button>
+          <button type="button" class="mood-button" data-score="3" data-label="Okay">Okay</button>
+          <button type="button" class="mood-button" data-score="2" data-label="Low">Low</button>
+          <button type="button" class="mood-button" data-score="1" data-label="Rough">Rough</button>
+        </div>
+
+        <label class="note-label" for="moodNote">Add a small note</label>
+        <textarea id="moodNote" rows="4" placeholder="What shaped your mood today?"></textarea>
+
+        <button class="save-button" id="saveMood" type="button">Save mood</button>
+        <p class="save-message" id="saveMessage">Your entries stay in this browser with Local Storage.</p>
+      </article>
+
+      <article class="panel summary-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Trends</p>
+            <h2>Your mood pattern</h2>
+          </div>
+          <div class="view-toggle" aria-label="Chart view">
+            <button type="button" class="toggle-button active" data-view="daily">Daily</button>
+            <button type="button" class="toggle-button" data-view="weekly">Weekly</button>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div>
+            <span>Average</span>
+            <strong id="averageMood">--</strong>
+          </div>
+          <div>
+            <span>Best day</span>
+            <strong id="bestDay">--</strong>
+          </div>
+          <div>
+            <span>Entries</span>
+            <strong id="entryCount">0</strong>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="moodChart" width="720" height="320" aria-label="Mood trend chart"></canvas>
+          <p class="empty-state" id="emptyState">Save your first mood to see the chart.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel history-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Recent history</p>
+          <h2>Saved moods</h2>
+        </div>
+        <button class="clear-button" id="clearAll" type="button">Clear all</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

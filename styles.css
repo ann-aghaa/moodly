@@ -1,0 +1,377 @@
+:root {
+  --bg: #f5f7fb;
+  --ink: #1d2636;
+  --muted: #667085;
+  --panel: #ffffff;
+  --line: #dde5ef;
+  --soft: #eef4f3;
+  --accent: #20796f;
+  --accent-dark: #155c55;
+  --warm: #f2b84b;
+  --low: #d96a6a;
+  --shadow: 0 20px 50px rgba(29, 38, 54, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(32, 121, 111, 0.16), transparent 34%),
+    radial-gradient(circle at top right, rgba(242, 184, 75, 0.18), transparent 30%),
+    var(--bg);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 28px 0 42px;
+}
+
+.hero,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  min-height: 210px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(2.7rem, 8vw, 5.4rem);
+  line-height: 0.95;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  max-width: 560px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.today-card {
+  min-width: 170px;
+  padding: 22px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.today-card span {
+  display: block;
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.today-card strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+#moodDate {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 10px;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.mood-options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.mood-button {
+  min-height: 72px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--soft);
+  color: var(--ink);
+  font-weight: 800;
+  transition: 0.18s ease;
+}
+
+.mood-button:hover,
+.mood-button.selected {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: #dcefeb;
+  box-shadow: 0 12px 24px rgba(32, 121, 111, 0.14);
+}
+
+.note-label {
+  display: block;
+  margin: 18px 0 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.save-button,
+.clear-button,
+.toggle-button {
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.save-button {
+  width: 100%;
+  margin-top: 14px;
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.save-button:hover {
+  background: var(--accent-dark);
+}
+
+.save-message {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 8px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.toggle-button {
+  padding: 0 14px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.toggle-button.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.stats div {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+.stats span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.stats strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.35rem;
+}
+
+.chart-wrap {
+  position: relative;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 320px;
+}
+
+.empty-state {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.history-panel {
+  margin-top: 18px;
+}
+
+.clear-button {
+  padding: 0 14px;
+  border-color: var(--line);
+  background: #ffffff;
+  color: var(--muted);
+}
+
+.clear-button:hover {
+  color: var(--low);
+  border-color: rgba(217, 106, 106, 0.6);
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 110px 90px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  animation: fadeIn 0.25s ease both;
+}
+
+.history-date {
+  font-weight: 800;
+}
+
+.history-mood {
+  display: inline-flex;
+  justify-content: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.history-note {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.empty-history {
+  margin: 0;
+  color: var(--muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .panel-heading {
+    flex-direction: column;
+  }
+
+  .today-card,
+  #moodDate {
+    width: 100%;
+  }
+
+  .grid,
+  .stats,
+  .history-item {
+    grid-template-columns: 1fr;
+  }
+
+  .mood-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mood-button:last-child {
+    grid-column: span 2;
+  }
+}

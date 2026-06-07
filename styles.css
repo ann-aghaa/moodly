@@ -99,12 +99,12 @@ h2 {
   padding: 22px;
   border-radius: 12px;
   background: var(--ink);
-  color: #ffffff;
+  color: yellow;
 }
 
 .today-card span {
   display: block;
-  color: #cbd5e1;
+  color: pink;
   font-weight: 700;
 }
 
@@ -180,7 +180,7 @@ textarea {
   border-radius: 12px;
   padding: 12px;
   color: var(--ink);
-  background: #ffffff;
+  background: green;
 }
 
 .save-button,
@@ -196,7 +196,7 @@ textarea {
   width: 100%;
   margin-top: 14px;
   background: var(--accent);
-  color: #ffffff;
+  color: lavender;
 }
 
 .save-button:hover {
@@ -226,7 +226,7 @@ textarea {
 
 .toggle-button.active {
   background: var(--accent);
-  color: #ffffff;
+  color: blue;
 }
 
 .stats {

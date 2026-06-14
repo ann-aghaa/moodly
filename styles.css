@@ -127,12 +127,12 @@ h2 {
   padding: 22px;
   border-radius: 12px;
   background: var(--ink);
-  color: green;
+  color: #A0D8D1;
 }
 
 .today-card span {
   display: block;
-  color: orange;
+  color: #EFB3D1;
   font-weight: 700;
 }
 
@@ -166,7 +166,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0 10px;
-  background: #ffffff;
+  background: #FADACO;
   color: var(--ink);
 }
 
@@ -190,7 +190,7 @@ h2 {
 .mood-button.selected {
   transform: translateY(-3px);
   border-color: var(--accent);
-  background: green;
+  background: #7OCEEB;
   box-shadow: 0 12px 24px rgba(32, 121, 111, 0.14);
 }
 
@@ -386,7 +386,7 @@ canvas {
 
   .today-card,
   #moodDate {
-    width: 100%;
+    width: 130%;
   }
 
   .grid,

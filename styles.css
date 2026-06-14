@@ -127,12 +127,12 @@ h2 {
   padding: 22px;
   border-radius: 12px;
   background: var(--ink);
-  color: light green;
+  color: green;
 }
 
 .today-card span {
   display: block;
-  color: pink;
+  color: orange;
   font-weight: 700;
 }
 
@@ -190,7 +190,7 @@ h2 {
 .mood-button.selected {
   transform: translateY(-3px);
   border-color: var(--accent);
-  background: light blue;
+  background: green;
   box-shadow: 0 12px 24px rgba(32, 121, 111, 0.14);
 }
 
@@ -208,7 +208,7 @@ textarea {
   border-radius: 12px;
   padding: 12px;
   color: var(--ink);
-  background: light pink;
+  background: #D498C6;
 }
 
 .save-button,
@@ -224,7 +224,7 @@ textarea {
   width: 100%;
   margin-top: 14px;
   background: var(--accent);
-  color: orange;
+  color: #0085BD;
 }
 
 .save-button:hover {
@@ -254,7 +254,7 @@ textarea {
 
 .toggle-button.active {
   background: var(--accent);
-  color: blue;
+  color: #6ACDE6;
 }
 
 .stats {

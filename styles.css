@@ -5,40 +5,27 @@
   --panel: #FFFFFF;
   --line: #F2DDE3;
   --soft: #FFF0F4;
+
   --accent: #E88BA0;
   --accent-dark: #D96B85;
+
   --warm: #f2b84b;
   --low: #d96a6a;
 
-  --great: #7DBB91;
-  --good: #A8D5BA
-  --okay: #F7D9A0;
-  --mood-low: #F2B6A0;
-  --rough: #E88BA0;
-  
+  /* Mood Colors */
+  --great: #A8DDB5;
+  --good: #C7E7A8;
+  --okay: #F8DFA6;
+  --mood-low: #F6C1A8;
+  --rough: #EFA3B5;
+
   --shadow: 0 20px 50px rgba(232, 139, 160, 0.12);
 }
-.great {
-  background-color: var(--great);
-}
-.good {
-  background-color: var(--good);
-}
-.okay {
-  background-color: var(--okay);
-}
-.low {
-  background-color: var(--mood-low);
-}
-.rough {
-  background-color: var(--rough);
-}
 
-background: linear-gradient(
-  135deg,
-  #E88BA0,
-  #7DBB91
-  );
+
+/* =========================
+   BASIC RESET
+========================= */
 
 * {
   box-sizing: border-box;
@@ -47,11 +34,22 @@ background: linear-gradient(
 body {
   margin: 0;
   min-height: 100vh;
+
   font-family: Arial, Helvetica, sans-serif;
+
   color: var(--ink);
+
   background:
-    radial-gradient(circle at top left, rgba(32, 121, 111, 0.16), transparent 34%),
-    radial-gradient(circle at top right, rgba(242, 184, 75, 0.18), transparent 30%),
+    radial-gradient(
+      circle at top left,
+      rgba(32, 121, 111, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(242, 184, 75, 0.18),
+      transparent 30%
+    ),
     var(--bg);
 }
 
@@ -65,34 +63,52 @@ button {
   cursor: pointer;
 }
 
+
+/* =========================
+   MAIN APP
+========================= */
+
 .app {
   width: min(1120px, calc(100% - 28px));
   margin: 0 auto;
   padding: 28px 0 42px;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero,
 .panel {
   border: 1px solid var(--line);
   border-radius: 14px;
+
   background: rgba(255, 255, 255, 0.9);
+
   box-shadow: var(--shadow);
 }
 
 .hero {
   min-height: 210px;
+
   padding: 30px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 20px;
 }
 
 .eyebrow {
   margin: 0 0 8px;
+
   color: var(--accent);
+
   font-size: 0.78rem;
   font-weight: 700;
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -105,47 +121,82 @@ p {
 
 h1 {
   margin-bottom: 10px;
+
   font-size: clamp(2.7rem, 8vw, 5.4rem);
+
   line-height: 0.95;
 }
 
 h2 {
   margin-bottom: 0;
+
   font-size: 1.35rem;
 }
 
 .subtitle {
   max-width: 560px;
+
   margin-bottom: 0;
+
   color: var(--muted);
+
   font-size: 1.05rem;
+
   line-height: 1.6;
 }
 
+
+/* =========================
+   TODAY CARD
+========================= */
+
 .today-card {
   min-width: 170px;
+
   padding: 22px;
-  border-radius: 12px;
-  background: #ffc2e2;
-  color: #ffc5cb;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #E88BA0,
+    #F3B7C5
+  );
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px rgba(232, 139, 160, 0.18);
 }
 
 .today-card span {
   display: block;
-  color: #f8f8f4;
+
+  color: #fff;
+
   font-weight: 700;
 }
 
 .today-card strong {
   display: block;
+
   margin-top: 6px;
+
   font-size: 1.4rem;
 }
 
+
+/* =========================
+   GRID
+========================= */
+
 .grid {
   display: grid;
+
   grid-template-columns: 0.9fr 1.1fr;
+
   gap: 18px;
+
   margin-top: 18px;
 }
 
@@ -155,383 +206,517 @@ h2 {
 
 .panel-heading {
   display: flex;
+
   align-items: flex-start;
   justify-content: space-between;
+
   gap: 16px;
+
   margin-bottom: 20px;
 }
 
-.trend-buttons {
-    display: flex;
-    gap: 8px;
-    margin-top: 5px;
-}
 
-.trend-buttons button {
-    padding: 8px 16px;
-    border: 1px solid #e5c8d1;
-    border-radius: 8px;
-    background: #fff7f9;
-    color: #694b55;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+/* =========================
+   DAILY / WEEKLY
+========================= */
 
-.trend-buttons button:hover {
-    background: #f9dce5;
-    border-color: #e78aa2;
-    color: #c85d78;
-    transform: translateY(-1px);
-}
-
-/* Daily & Weekly buttons */
 .toggle {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 8px;
+
+  padding: 4px;
+
+  border-radius: 12px;
+
+  background: #FFF1F5;
+
+  border: 1px solid #F2DDE3;
 }
 
 .toggle button {
-    padding: 8px 16px;
-    border: 1px solid #e5c8d1;
-    border-radius: 9px;
-    background: #fff7f9;
-    color: #694b55;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  min-width: 70px;
+
+  padding: 8px 15px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #8B7078;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
-/* Hover */
 .toggle button:hover {
-    background: #fbe3e9;
-    border-color: #e58aa1;
-    color: #c75d76;
-    transform: translateY(-1px);
+  background: #F9DCE5;
+
+  color: #C75D76;
+
+  transform: translateY(-1px);
 }
 
-/* Selected button */
 .toggle button.active {
-    background: #e9829b;
-    color: white;
-    border-color: #e9829b;
-    box-shadow: 0 3px 8px rgba(233, 130, 155, 0.25);
+  background: #E88BA0;
+
+  color: white;
+
+  box-shadow:
+    0 4px 9px rgba(232, 139, 160, 0.25);
 }
 
-.toggle button:first-child {
-    background: #f7dce5;
-    color: #c75d76;
-}
 
-.toggle button:last-child {
-    background: #eee8f8;
-    color: #75609a;
-}
+/* =========================
+   MOOD BUTTONS
+========================= */
 
-.toggle button:first-child:hover,
-.toggle button:last-child:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* Selected Daily/Weekly button */
-.trend-buttons button.active {
-    background: #e9829b;
-    color: white;
-    border-color: #e9829b;
-    box-shadow: 0 3px 8px rgba(233, 130, 155, 0.25);
-}
-/* Mood buttons */
 .mood-options {
-    display: flex;
-    gap: 10px;
-    margin-top: 18px;
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 18px;
 }
+
+
+/* Main mood button */
 
 .mood-button {
-    min-width: 78px;
-    height: 42px;
-    padding: 0 18px;
+  min-width: 88px;
 
-    border-radius: 12px;
-    border: 1px solid transparent;
+  height: 48px;
 
-    font-size: 15px;
-    font-weight: 600;
+  padding: 0 20px;
 
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+  border-radius: 16px;
 
-/* Great */
-.mood-button.great {
-    background: #e4f6e8;
-    color: #3f8f50;
-    border-color: #b9ddc1;
-}
+  border: 2px solid transparent;
 
-/* Good */
-.mood-button.good {
-    background: #edf7e5;
-    color: #679447;
-    border-color: #c9dfb8;
-}
+  font-size: 15px;
 
-/* Okay */
-.mood-button.okay {
-    background: #fff5dc;
-    color: #a18127;
-    border-color: #ead79b;
-}
-
-/* Low */
-.mood-button.low {
-    background: #fff0df;
-    color: #b87532;
-    border-color: #e8c39b;
-}
-
-/* Rough */
-.mood-button.rough {
-    background: #fde7ec;
-    color: #c35b72;
-    border-color: #e8bdc8;
-}
-
-/* Hover */
-.mood-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(80, 50, 60, 0.12);
-}
-
-/* Selected mood */
-.mood-button.active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(80, 50, 60, 0.15);
-} 
-
-/* Hover effect */
-.mood-buttons button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.08);
-}
-.stat-card {
-  background: #fff1f4;
-  border: 1px solid #f3d8df;
-  border-radius: 14px;
-  padding: 18px;
-}
-
-.stat-card span {
-  display: block;
-  color: #807276;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.stat-card strong {
-  color: #293248;
-  font-size: 22px;
-}
-
-.recent-moods h3 {
-  margin: 0 0 14px;
-  color: #293248;
-  font-size: 18px;
-}
-
-.mood-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 4px;
-  border-bottom: 1px solid #f1e2e5;
-}
-
-.mood-date {
-  width: 70px;
-  color: #6f6870;
-  font-weight: 600;
-}
-
-.mood-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.mood-name {
-  color: #293248;
   font-weight: 700;
+
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
-.rough {
-  background: #f4b942;
+
+/* =========================
+   GREAT
+========================= */
+
+.mood-button.great {
+  background: #E5F6E9;
+
+  color: #438957;
+
+  border-color: #B9DFC2;
+
+  box-shadow:
+    0 3px 8px rgba(67, 137, 87, 0.08);
 }
 
-.good {
-  background: #7bc67b;
+
+/* =========================
+   GOOD
+========================= */
+
+.mood-button.good {
+  background: #EEF8E4;
+
+  color: #6D9548;
+
+  border-color: #CDE2B8;
+
+  box-shadow:
+    0 3px 8px rgba(109, 149, 72, 0.08);
 }
 
-.okay {
-  background: #9fa8da;
+
+/* =========================
+   OKAY
+========================= */
+
+.mood-button.okay {
+  background: #FFF6DC;
+
+  color: #A27F27;
+
+  border-color: #EBD79A;
+
+  box-shadow:
+    0 3px 8px rgba(162, 127, 39, 0.08);
 }
+
+
+/* =========================
+   LOW
+========================= */
+
+.mood-button.low {
+  background: #FFF0E3;
+
+  color: #B66F3A;
+
+  border-color: #EBC5A5;
+
+  box-shadow:
+    0 3px 8px rgba(182, 111, 58, 0.08);
+}
+
+
+/* =========================
+   ROUGH
+========================= */
+
+.mood-button.rough {
+  background: #FCE7ED;
+
+  color: #C15B73;
+
+  border-color: #E8B9C6;
+
+  box-shadow:
+    0 3px 8px rgba(193, 91, 115, 0.08);
+}
+
+
+/* =========================
+   MOOD HOVER
+========================= */
+
+.mood-button:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  box-shadow:
+    0 7px 15px rgba(80, 50, 60, 0.13);
+}
+
+
+/* Individual hover colors */
+
+.mood-button.great:hover {
+  background: #D6F0DC;
+}
+
+.mood-button.good:hover {
+  background: #E2F2D3;
+}
+
+.mood-button.okay:hover {
+  background: #FFEEBE;
+}
+
+.mood-button.low:hover {
+  background: #FFE4D2;
+}
+
+.mood-button.rough:hover {
+  background: #F8D8E1;
+}
+
+
+/* =========================
+   SELECTED MOOD
+========================= */
+
+.mood-button.active {
+  transform: translateY(-2px);
+
+  border-color: currentColor;
+
+  box-shadow:
+    0 6px 15px rgba(80, 50, 60, 0.18);
+
+  position: relative;
+}
+
+
+/* Small check mark for selected mood */
+
+.mood-button.active::after {
+  content: "✓";
+
+  position: absolute;
+
+  top: -8px;
+  right: -7px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   NOTE
+========================= */
 
 .note-label {
   display: block;
+
   margin: 18px 0 8px;
+
   color: var(--muted);
+
   font-weight: 700;
 }
 
 textarea {
-    background: #f8edf4;
-    border: 1px solid #e5c7d5;
-    color: #49343a;
-    border-radius: 12px;
-    padding: 16px;
-    font-size: 16px;
-    resize: vertical;
-    outline: none;
+  width: 100%;
+
+  background: #F8EDF4;
+
+  border: 1px solid #E5C7D5;
+
+  color: #49343A;
+
+  border-radius: 14px;
+
+  padding: 16px;
+
+  font-size: 16px;
+
+  resize: vertical;
+
+  outline: none;
 }
 
 textarea:focus {
-    border-color: #df829c;
-    box-shadow: 0 0 0 3px rgba(223, 130, 156, 0.12);
+  border-color: #DF829C;
+
+  box-shadow:
+    0 0 0 3px rgba(223, 130, 156, 0.12);
 }
 
-.save-button,
-.clear-button,
-.toggle-button {
-  min-height: 42px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  font-weight: 800;
-}
+
+/* =========================
+   SAVE BUTTON
+========================= */
 
 .save-button {
   width: 100%;
+
+  min-height: 46px;
+
   margin-top: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
   background: var(--accent);
-  color: #fbd9d9;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  transition: all 0.2s ease;
 }
 
 .save-button:hover {
   background: var(--accent-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(217, 107, 133, 0.22);
+}
+
+.save-button:active {
+  transform: translateY(0);
 }
 
 .save-message {
   margin: 12px 0 0;
+
   color: var(--muted);
+
   font-size: 0.92rem;
 }
 
-.view-toggle {
-  display: flex;
-  gap: 8px;
-  padding: 4px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--soft);
-}
 
-.toggle-button {
-  padding: 0 14px;
-  background: transparent;
-  color: var(--muted);
-}
-
-.toggle-button.active {
-  background: var(--accent);
-  color:  #d96f89;
-}
+/* =========================
+   STATS
+========================= */
 
 .stats {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 10px;
+
   margin-bottom: 18px;
 }
 
 .stats div {
   padding: 14px;
+
   border: 1px solid var(--line);
+
   border-radius: 12px;
+
   background: var(--soft);
 }
 
 .stats span {
   display: block;
+
   color: var(--muted);
+
   font-size: 0.88rem;
+
   font-weight: 700;
 }
 
 .stats strong {
   display: block;
+
   margin-top: 6px;
+
   font-size: 1.35rem;
 }
 
+
+/* =========================
+   CHART
+========================= */
+
 .chart-wrap {
   position: relative;
+
   min-height: 320px;
+
   border: 1px solid var(--line);
+
   border-radius: 12px;
-  background: #ffffff;
+
+  background: #FFFFFF;
+
   overflow: hidden;
 }
 
 canvas {
   display: block;
+
   width: 100%;
+
   height: 320px;
 }
 
 .empty-state {
   position: absolute;
+
   inset: 0;
+
   display: grid;
+
   place-items: center;
+
   margin: 0;
+
   color: var(--muted);
+
   font-weight: 700;
+
   background: rgba(255, 255, 255, 0.78);
 }
+
+
+/* =========================
+   HISTORY
+========================= */
 
 .history-panel {
   margin-top: 18px;
 }
 
 .clear-button {
+  min-height: 42px;
+
   padding: 0 14px;
-  border-color: var(--line);
-  background: #ffffff;
+
+  border: 1px solid var(--line);
+
+  border-radius: 10px;
+
+  background: #FFFFFF;
+
   color: var(--muted);
+
+  font-weight: 800;
+
+  transition: all 0.2s ease;
 }
 
 .clear-button:hover {
   color: var(--low);
-  border-color: rgba(217, 106, 106, 0.6);
+
+  border-color:
+    rgba(217, 106, 106, 0.6);
+
+  background: #FFF5F5;
 }
 
 .history-list {
   display: grid;
+
   gap: 10px;
 }
 
 .history-item {
   display: grid;
+
   grid-template-columns: 110px 90px 1fr;
+
   gap: 12px;
+
   align-items: center;
+
   padding: 14px;
+
   border: 1px solid var(--line);
+
   border-radius: 12px;
-  background: #ffffff;
+
+  background: #FFFFFF;
+
   animation: fadeIn 0.25s ease both;
 }
 
@@ -541,36 +726,58 @@ canvas {
 
 .history-mood {
   display: inline-flex;
+
   justify-content: center;
+
   padding: 8px 10px;
+
   border-radius: 999px;
+
   background: var(--soft);
+
   color: var(--accent-dark);
+
   font-weight: 800;
 }
 
 .history-note {
   color: var(--muted);
+
   line-height: 1.4;
 }
 
 .empty-history {
   margin: 0;
+
   color: var(--muted);
 }
+
+
+/* =========================
+   ANIMATION
+========================= */
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
 
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 860px) {
+
   .hero,
   .panel-heading {
     flex-direction: column;
@@ -578,7 +785,7 @@ canvas {
 
   .today-card,
   #moodDate {
-    width: 130%;
+    width: 100%;
   }
 
   .grid,
@@ -588,7 +795,13 @@ canvas {
   }
 
   .mood-options {
+    display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mood-button {
+    width: 100%;
   }
 
   .mood-button:last-child {

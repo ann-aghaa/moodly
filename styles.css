@@ -126,7 +126,7 @@ h2 {
   min-width: 170px;
   padding: 22px;
   border-radius: 12px;
-  background: var(--ink);
+  background: #ffc2e2;
   color: #ffc5cb;
 }
 
@@ -195,40 +195,6 @@ h2 {
     transition: all 0.2s ease;
 }
 
-/* Great */
-.mood-buttons button:nth-child(1) {
-    background: #e4f6e8;
-    color: #3f9152;
-    border-color: #b9dfc1;
-}
-
-/* Good */
-.mood-buttons button:nth-child(2) {
-    background: #edf7df;
-    color: #6d9945;
-    border-color: #cfe4b5;
-}
-
-/* Okay */
-.mood-buttons button:nth-child(3) {
-    background: #fff5d9;
-    color: #a58325;
-    border-color: #ead79b;
-}
-
-/* Low */
-.mood-buttons button:nth-child(4) {
-    background: #fff0df;
-    color: #b87532;
-    border-color: #eac69d;
-}
-
-/* Rough */
-.mood-buttons button:nth-child(5) {
-    background: #fde8ed;
-    color: #c25c73;
-    border-color: #efc1cc;
-}
 
 /* Hover effect */
 .mood-buttons button:hover {

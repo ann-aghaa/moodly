@@ -49,28 +49,59 @@
         <div class="panel-heading">
           <div>
             <p class="eyebrow">Trends</p>
-            <h2>Your mood pattern</h2>
-          </div>
-          <div class="view-toggle" aria-label="Chart view">
-            <button type="button" class="toggle-button active" data-view="daily">Daily</button>
-            <button type="button" class="toggle-button" data-view="weekly">Weekly</button>
-          </div>
-        </div>
+<div class="mood-pattern">
+  <div class="pattern-header">
+    <div>
+      <span class="section-label">TRENDS</span>
+      <h2>Your mood pattern</h2>
+    </div>
 
-        <div class="stats">
-          <div>
-            <span>Average</span>
-            <strong id="averageMood">--</strong>
-          </div>
-          <div>
-            <span>Best day</span>
-            <strong id="bestDay">--</strong>
-          </div>
-          <div>
-            <span>Entries</span>
-            <strong id="entryCount">0</strong>
-          </div>
-        </div>
+    <div class="toggle">
+      <button class="active">Daily</button>
+      <button>Weekly</button>
+    </div>
+  </div>
+
+  <div class="mood-stats">
+    <div class="stat-card">
+      <span>Average</span>
+      <strong>1.0 / 5</strong>
+    </div>
+
+    <div class="stat-card">
+      <span>Best day</span>
+      <strong>Jun 7</strong>
+    </div>
+
+    <div class="stat-card">
+      <span>Entries</span>
+      <strong>1</strong>
+    </div>
+  </div>
+
+  <div class="recent-moods">
+    <h3>Recent moods</h3>
+
+    <div class="mood-row">
+      <span class="mood-date">Jun 7</span>
+      <span class="mood-dot rough"></span>
+      <span class="mood-name">Rough</span>
+    </div>
+
+    <div class="mood-row">
+      <span class="mood-date">Jun 6</span>
+      <span class="mood-dot good"></span>
+      <span class="mood-name">Good</span>
+    </div>
+
+    <div class="mood-row">
+      <span class="mood-date">Jun 5</span>
+      <span class="mood-dot okay"></span>
+      <span class="mood-name">Okay</span>
+    </div>
+  </div>
+</div>
+
 
         <div class="chart-wrap">
           <canvas id="moodChart" width="720" height="320" aria-label="Mood trend chart"></canvas>

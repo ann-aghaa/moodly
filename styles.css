@@ -186,6 +186,57 @@ h2 {
     transform: translateY(-1px);
 }
 
+/* Daily & Weekly buttons */
+.toggle {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.toggle button {
+    padding: 8px 16px;
+    border: 1px solid #e5c8d1;
+    border-radius: 9px;
+    background: #fff7f9;
+    color: #694b55;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.toggle button:hover {
+    background: #fbe3e9;
+    border-color: #e58aa1;
+    color: #c75d76;
+    transform: translateY(-1px);
+}
+
+/* Selected button */
+.toggle button.active {
+    background: #e9829b;
+    color: white;
+    border-color: #e9829b;
+    box-shadow: 0 3px 8px rgba(233, 130, 155, 0.25);
+}
+
+.toggle button:first-child {
+    background: #f7dce5;
+    color: #c75d76;
+}
+
+.toggle button:last-child {
+    background: #eee8f8;
+    color: #75609a;
+}
+
+.toggle button:first-child:hover,
+.toggle button:last-child:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
 /* Selected Daily/Weekly button */
 .trend-buttons button.active {
     background: #e9829b;

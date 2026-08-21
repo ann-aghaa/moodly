@@ -244,55 +244,74 @@ h2 {
     border-color: #e9829b;
     box-shadow: 0 3px 8px rgba(233, 130, 155, 0.25);
 }
-.mood-buttons {
+/* Mood buttons */
+.mood-options {
     display: flex;
-    gap: 9px;
+    gap: 10px;
     margin-top: 18px;
 }
 
-.mood-buttons button {
-    padding: 9px 17px;
-    border-radius: 9px;
+.mood-button {
+    min-width: 78px;
+    height: 42px;
+    padding: 0 18px;
+
+    border-radius: 12px;
+    border: 1px solid transparent;
+
     font-size: 15px;
     font-weight: 600;
+
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 /* Great */
-.mood-buttons button:nth-child(1) {
-    background: #e6f7eb;
-    color: #438c52;
-    border: 1px solid #b8dfc1;
+.mood-button.great {
+    background: #e4f6e8;
+    color: #3f8f50;
+    border-color: #b9ddc1;
 }
 
 /* Good */
-.mood-buttons button:nth-child(2) {
+.mood-button.good {
     background: #edf7e5;
-    color: #679348;
-    border: 1px solid #c9dfb8;
+    color: #679447;
+    border-color: #c9dfb8;
 }
 
 /* Okay */
-.mood-buttons button:nth-child(3) {
-    background: #fff6dc;
-    color: #a08027;
-    border: 1px solid #ead89d;
+.mood-button.okay {
+    background: #fff5dc;
+    color: #a18127;
+    border-color: #ead79b;
 }
 
 /* Low */
-.mood-buttons button:nth-child(4) {
+.mood-button.low {
     background: #fff0df;
     color: #b87532;
-    border: 1px solid #e8c39b;
+    border-color: #e8c39b;
 }
 
 /* Rough */
-.mood-buttons button:nth-child(5) {
-    background: #fde8ed;
-    color: #c45d73;
-    border: 1px solid #e8bdc8;
+.mood-button.rough {
+    background: #fde7ec;
+    color: #c35b72;
+    border-color: #e8bdc8;
 }
+
+/* Hover */
+.mood-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(80, 50, 60, 0.12);
+}
+
+/* Selected mood */
+.mood-button.active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(80, 50, 60, 0.15);
+} 
 
 /* Hover effect */
 .mood-buttons button:hover {

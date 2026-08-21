@@ -161,37 +161,124 @@ h2 {
   margin-bottom: 20px;
 }
 
-#moodDate {
-  min-height: 42px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0 10px;
-  background: #FADACO;
-  color: var(--ink);
+.mood-pattern {
+  background: #ffffff;
+  border: 1px solid #f0d7df;
+  border-radius: 18px;
+  padding: 28px;
 }
 
-.mood-options {
+.pattern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.section-label {
+  color: #e789a3;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.pattern-header h2 {
+  margin: 4px 0 0;
+  color: #273248;
+  font-size: 28px;
+}
+
+.toggle {
+  display: flex;
+  background: #fff0f4;
+  border: 1px solid #f2d5de;
+  border-radius: 14px;
+  padding: 4px;
+}
+
+.toggle button {
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  border-radius: 11px;
+  color: #806d72;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toggle button.active {
+  background: #e789a3;
+  color: white;
+}
+
+.mood-stats {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: #fff1f4;
+  border: 1px solid #f3d8df;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.stat-card span {
+  display: block;
+  color: #807276;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.stat-card strong {
+  color: #293248;
+  font-size: 22px;
+}
+
+.recent-moods h3 {
+  margin: 0 0 14px;
+  color: #293248;
+  font-size: 18px;
+}
+
+.mood-row {
+  display: flex;
+  align-items: center;
   gap: 10px;
+  padding: 14px 4px;
+  border-bottom: 1px solid #f1e2e5;
 }
 
-.mood-button {
-  min-height: 72px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--soft);
-  color: var(--ink);
-  font-weight: 800;
-  transition: 0.18s ease;
+.mood-date {
+  width: 70px;
+  color: #6f6870;
+  font-weight: 600;
 }
 
-.mood-button:hover,
-.mood-button.selected {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-  background: #7OCEEB;
-  box-shadow: 0 12px 24px rgba(32, 121, 111, 0.14);
+.mood-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mood-name {
+  color: #293248;
+  font-weight: 700;
+}
+
+.rough {
+  background: #f4b942;
+}
+
+.good {
+  background: #7bc67b;
+}
+
+.okay {
+  background: #9fa8da;
 }
 
 .note-label {

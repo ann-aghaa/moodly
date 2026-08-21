@@ -132,7 +132,7 @@ h2 {
 
 .today-card span {
   display: block;
-  color: #feeeed;
+  color: #f8f8f4;
   font-weight: 700;
 }
 
@@ -161,33 +161,46 @@ h2 {
   margin-bottom: 20px;
 }
 
+.trend-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
 .trend-buttons button {
-    background: #ffffff;
-    color: #4d3940;
-    border: 1px solid #dfc8cf;
-    padding: 7px 14px;
+    padding: 8px 16px;
+    border: 1px solid #e5c8d1;
     border-radius: 8px;
+    background: #fff7f9;
+    color: #694b55;
     font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .trend-buttons button:hover {
-    background: #fff0f4;
-    border-color: #e88aa0;
-    color: #d35f78;
+    background: #f9dce5;
+    border-color: #e78aa2;
+    color: #c85d78;
+    transform: translateY(-1px);
 }
 
+/* Selected Daily/Weekly button */
 .trend-buttons button.active {
-    background: #e88aa0;
+    background: #e9829b;
     color: white;
-    border-color: #e88aa0;
+    border-color: #e9829b;
+    box-shadow: 0 3px 8px rgba(233, 130, 155, 0.25);
+}
+.mood-buttons {
+    display: flex;
+    gap: 9px;
+    margin-top: 18px;
 }
 
-/* Mood buttons */
 .mood-buttons button {
-    border: 1px solid transparent;
-    padding: 8px 16px;
+    padding: 9px 17px;
     border-radius: 9px;
     font-size: 15px;
     font-weight: 600;
@@ -195,13 +208,46 @@ h2 {
     transition: all 0.2s ease;
 }
 
+/* Great */
+.mood-buttons button:nth-child(1) {
+    background: #e6f7eb;
+    color: #438c52;
+    border: 1px solid #b8dfc1;
+}
+
+/* Good */
+.mood-buttons button:nth-child(2) {
+    background: #edf7e5;
+    color: #679348;
+    border: 1px solid #c9dfb8;
+}
+
+/* Okay */
+.mood-buttons button:nth-child(3) {
+    background: #fff6dc;
+    color: #a08027;
+    border: 1px solid #ead89d;
+}
+
+/* Low */
+.mood-buttons button:nth-child(4) {
+    background: #fff0df;
+    color: #b87532;
+    border: 1px solid #e8c39b;
+}
+
+/* Rough */
+.mood-buttons button:nth-child(5) {
+    background: #fde8ed;
+    color: #c45d73;
+    border: 1px solid #e8bdc8;
+}
 
 /* Hover effect */
 .mood-buttons button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.08);
 }
-
 .stat-card {
   background: #fff1f4;
   border: 1px solid #f3d8df;

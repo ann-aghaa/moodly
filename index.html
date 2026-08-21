@@ -3,83 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MoodMap</title>
-  <link rel="stylesheet" href="styles.css">
+
+ <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <main class="app">
+
+    <!-- Header -->
     <header class="hero">
       <div>
         <p class="eyebrow">Daily mood tracker</p>
+
         <h1>MoodMap</h1>
-        <p class="subtitle">Mark how your day felt, then watch your patterns build over time.</p>
+
+        <p class="subtitle">
+          Mark how your day felt, then watch your patterns build over time.
+        </p>
       </div>
+
       <div class="today-card">
         <span>Today</span>
         <strong id="todayLabel">--</strong>
       </div>
     </header>
 
+
+    <!-- Main Grid -->
     <section class="grid">
+
+      <!-- Mood Check-in -->
       <article class="panel mood-panel">
+
         <div class="panel-heading">
           <div>
             <p class="eyebrow">End of day check-in</p>
             <h2>How was your mood?</h2>
           </div>
-          <input id="moodDate" type="date" aria-label="Mood date">
+
+          <input
+            id="moodDate"
+            type="date"
+            aria-label="Mood date"
+          >
         </div>
 
-        <div class="mood-options" id="moodOptions" aria-label="Mood choices">
-          <button type="button" class="mood-button" data-score="5" data-label="Great">Great</button>
-          <button type="button" class="mood-button" data-score="4" data-label="Good">Good</button>
-          <button type="button" class="mood-button" data-score="3" data-label="Okay">Okay</button>
-          <button type="button" class="mood-button" data-score="2" data-label="Low">Low</button>
-          <button type="button" class="mood-button" data-score="1" data-label="Rough">Rough</button>
+
+        <!-- Mood Buttons -->
+        <div
+          class="mood-options"
+          id="moodOptions"
+          aria-label="Mood choices"
+        >
+          <button
+            type="button"
+            class="mood-button great"
+            data-score="5"
+            data-label="Great"
+          >
+            Great
+          </button>
+
+          <button
+            type="button"
+            class="mood-button good"
+            data-score="4"
+            data-label="Good"
+          >
+            Good
+          </button>
+
+          <button
+            type="button"
+            class="mood-button okay"
+            data-score="3"
+            data-label="Okay"
+          >
+            Okay
+          </button>
+
+          <button
+            type="button"
+            class="mood-button low"
+            data-score="2"
+            data-label="Low"
+          >
+            Low
+          </button>
+
+          <button
+            type="button"
+            class="mood-button rough"
+            data-score="1"
+            data-label="Rough"
+          >
+            Rough
+          </button>
         </div>
 
-        <label class="note-label" for="moodNote">Add a small note</label>
-        <textarea id="moodNote" rows="4" placeholder="What shaped your mood today?"></textarea>
 
-        <button class="save-button" id="saveMood" type="button">Save mood</button>
-        <p class="save-message" id="saveMessage">Your entries stay in this browser with Local Storage.</p>
+        <!-- Note -->
+        <label class="note-label" for="moodNote">
+          Add a small note
+        </label>
+
+        <textarea
+          id="moodNote"
+          rows="4"
+          placeholder="What shaped your mood today?"
+        ></textarea>
+
+
+        <!-- Save Button -->
+        <button
+          class="save-button"
+          id="saveMood"
+          type="button"
+        >
+          Save mood
+        </button>
+
+        <p class="save-message" id="saveMessage">
+          Your entries stay in this browser with Local Storage.
+        </p>
+
       </article>
 
+
+      <!-- Trends -->
       <article class="panel summary-panel">
-        <div class="panel-heading">
-          <div>
-            <p class="eyebrow">Trends</p>
-<div class="mood-pattern">
-  <div class="pattern-header">
-    <div>
-      <span class="section-label">TRENDS</span>
-      <h2>Your mood pattern</h2>
-    </div>
 
-    <div class="toggle">
-      <button class="active">Daily</button>
-      <button>Weekly</button>
-    </div>
-  </div>
-      <div class="chart-wrap">
-          <canvas id="moodChart" width="720" height="320" aria-label="Mood trend chart"></canvas>
-          <p class="empty-state" id="emptyState">Save your first mood to see the chart.</p>
+        <div class="mood-pattern">
+
+          <div class="pattern-header">
+
+            <div>
+              <span class="section-label">TRENDS</span>
+
+              <h2>Your mood pattern</h2>
+            </div>
+
+
+            <!-- Daily / Weekly Buttons -->
+            <div class="toggle">
+
+              <button
+                type="button"
+                class="active"
+                id="dailyButton"
+              >
+                Daily
+              </button>
+
+              <button
+                type="button"
+                id="weeklyButton"
+              >
+                Weekly
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- Chart -->
+          <div class="chart-wrap">
+
+            <canvas
+              id="moodChart"
+              width="720"
+              height="320"
+              aria-label="Mood trend chart"
+            ></canvas>
+
+            <p class="empty-state" id="emptyState">
+              Save your first mood to see the chart.
+            </p>
+
+          </div>
+
         </div>
+
       </article>
+
     </section>
 
+
+    <!-- History -->
     <section class="panel history-panel">
+
       <div class="panel-heading">
+
         <div>
           <p class="eyebrow">Recent history</p>
           <h2>Saved moods</h2>
         </div>
-        <button class="clear-button" id="clearAll" type="button">Clear all</button>
+
+        <button
+          class="clear-button"
+          id="clearAll"
+          type="button"
+        >
+          Clear all
+        </button>
+
       </div>
-      <div class="history-list" id="historyList"></div>
+
+
+      <div
+        class="history-list"
+        id="historyList"
+      ></div>
+
     </section>
+
   </main>
 
+
+  <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>

@@ -161,62 +161,57 @@ h2 {
   margin-bottom: 20px;
 }
 
-.mood-pattern {
-  background: #ffffff;
-  border: 1px solid #f0d7df;
-  border-radius: 18px;
-  padding: 28px;
+.mood-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.pattern-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 24px;
+.mood-buttons button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f8f5f6;
+    color: #4b3940;
 }
 
-.section-label {
-  color: #e789a3;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
+.mood-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.pattern-header h2 {
-  margin: 4px 0 0;
-  color: #273248;
-  font-size: 28px;
+/* Great */
+.mood-buttons button:nth-child(1) {
+    background: #e7f7eb;
+    color: #3d9250;
 }
 
-.toggle {
-  display: flex;
-  background: #fff0f4;
-  border: 1px solid #f2d5de;
-  border-radius: 14px;
-  padding: 4px;
+/* Good */
+.mood-buttons button:nth-child(2) {
+    background: #eef8e5;
+    color: #679747;
 }
 
-.toggle button {
-  border: none;
-  background: transparent;
-  padding: 12px 20px;
-  border-radius: 11px;
-  color: #806d72;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
+/* Okay */
+.mood-buttons button:nth-child(3) {
+    background: #fff6dc;
+    color: #a98528;
 }
 
-.toggle button.active {
-  background: #e789a3;
-  color: white;
+/* Low */
+.mood-buttons button:nth-child(4) {
+    background: #fff0df;
+    color: #b97835;
 }
 
-.mood-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 28px;
+/* Rough */
+.mood-buttons button:nth-child(5) {
+    background: #fde8ed;
+    color: #c45d72;
 }
 
 .stat-card {

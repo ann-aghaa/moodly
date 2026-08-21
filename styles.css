@@ -127,12 +127,12 @@ h2 {
   padding: 22px;
   border-radius: 12px;
   background: var(--ink);
-  color: #A0D8D1;
+  color: #ffc5cb;
 }
 
 .today-card span {
   display: block;
-  color: #EFB3D1;
+  color: #feeeed;
   font-weight: 700;
 }
 
@@ -161,57 +161,56 @@ h2 {
   margin-bottom: 20px;
 }
 
-.mood-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
+/* Mood buttons */
 .mood-buttons button {
-    border: none;
-    padding: 10px 18px;
-    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    border-radius: 9px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    background: #f8f5f6;
-    color: #4b3940;
-}
-
-.mood-buttons button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* Great */
 .mood-buttons button:nth-child(1) {
-    background: #e7f7eb;
-    color: #3d9250;
+    background: #e4f6e8;
+    color: #3f9152;
+    border-color: #b9dfc1;
 }
 
 /* Good */
 .mood-buttons button:nth-child(2) {
-    background: #eef8e5;
-    color: #679747;
+    background: #edf7df;
+    color: #6d9945;
+    border-color: #cfe4b5;
 }
 
 /* Okay */
 .mood-buttons button:nth-child(3) {
-    background: #fff6dc;
-    color: #a98528;
+    background: #fff5d9;
+    color: #a58325;
+    border-color: #ead79b;
 }
 
 /* Low */
 .mood-buttons button:nth-child(4) {
     background: #fff0df;
-    color: #b97835;
+    color: #b87532;
+    border-color: #eac69d;
 }
 
 /* Rough */
 .mood-buttons button:nth-child(5) {
     background: #fde8ed;
-    color: #c45d72;
+    color: #c25c73;
+    border-color: #efc1cc;
+}
+
+/* Hover effect */
+.mood-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 .stat-card {
